@@ -12,13 +12,18 @@ This framework provides CloudKit-free sync primitives that can be reused across 
 - `LocalFirstSyncStore` protocol for local-first store implementations
 - `UserDefaultsSyncOperationStore` persistence adapter
 
-## Release Automation
+## Release Automation (No GitHub Actions)
 
-On every push to `main`, GitHub Actions will:
+Use the local release script instead:
 
 1. Build in release mode
 2. Run tests
 3. Auto-bump SemVer tag (`v0.1.0`, `v0.1.1`, ...)
-4. Create a GitHub Release
+4. Push tag
+5. Create GitHub Release notes
 
-Workflow: `.github/workflows/release.yml`
+Command:
+
+```bash
+scripts/release_local.sh
+```
